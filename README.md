@@ -8,21 +8,20 @@ Weather App is a mobile application created in Kotlin. The application is a weat
 - Show current weather, date, and weather status picture
 - Show weather for a week ahead
 - Display weather by geolocation or search for a specific location
-- Display the weather and status of the selected day hourly from 00:00 to 23:00
+- Display the weather and status hourly from 00:00 to 23:00
 
 ## 💾 Getting Started
 -  Clone the project repository to your local machine.
+-  Register at https://www.weatherapi.com/
+-  Use your own key in the API_KEY constant
 -  Run the application.
 -  Set up geolocation or enter the city name in the search field.
 
-Optional:
--  Register at https://www.weatherapi.com/
--  Use your own key in the API_KEY constant
-
 ## 🚀 Used technologies
 - Kotlin
-- Volley
+- Retrofit2
 - Picasso
+- Coroutine
 
 ### Author
 [Kostiantyn Marchenko](https://github.com/KosMarch)
