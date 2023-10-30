@@ -3,7 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="card_blue_bg">#5942D2F6</color>
-    <color name="blue">#3DCDF1</color>
-    <color name="pink">#B0D34A89</color>
+    <color name="blue">#81E6FF</color>
+    <color name="blue_bar">#1C8EBC</color>
 
 </resources>

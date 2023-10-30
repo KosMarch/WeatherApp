@@ -8,13 +8,19 @@ object DialogManager {
     fun locationSettingsDialog(context: Context, listener: Listener) {
         val builder = AlertDialog.Builder(context)
         val dialog = builder.create()
-        dialog.setTitle("Enable Location?")
-        dialog.setMessage("Location disabled, do you want enable location?")
-        dialog.setButton(AlertDialog.BUTTON_POSITIVE, "Ok") { _,_ ->
+        dialog.setTitle(context.resources.getString(R.string.dialog_location))
+        dialog.setMessage(context.resources.getString(R.string.dialog_location_message))
+        dialog.setButton(
+            AlertDialog.BUTTON_POSITIVE,
+            context.resources.getString(R.string.dialog_positive)
+        ) { _, _ ->
             listener.onClick(null)
             dialog.dismiss()
         }
-        dialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel") { _,_ ->
+        dialog.setButton(
+            AlertDialog.BUTTON_NEGATIVE,
+            context.resources.getString(R.string.dialog_negative)
+        ) { _, _ ->
             dialog.dismiss()
         }
         dialog.show()
@@ -25,14 +31,33 @@ object DialogManager {
         val editText = EditText(context)
         builder.setView(editText)
         val dialog = builder.create()
-        dialog.setTitle("City Name:")
-        dialog.setButton(AlertDialog.BUTTON_POSITIVE, "Ok") { _,_ ->
+        dialog.setTitle(context.resources.getString(R.string.dialog_city))
+        dialog.setButton(
+            AlertDialog.BUTTON_POSITIVE,
+            context.resources.getString(R.string.dialog_positive)
+        ) { _, _ ->
             listener.onClick(editText.text.toString())
             dialog.dismiss()
         }
-        dialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel") { _,_ ->
+        dialog.setButton(
+            AlertDialog.BUTTON_NEGATIVE,
+            context.resources.getString(R.string.dialog_negative)
+        ) { _, _ ->
             dialog.dismiss()
         }
+        dialog.show()
+    }
+
+    fun errorMessage(context: Context, e: String) {
+        val dialog = AlertDialog.Builder(context)
+            .setTitle(context.resources.getString(R.string.dialog_exception))
+            .setMessage(e)
+            .setPositiveButton(
+                context.resources.getString(R.string.dialog_positive)
+            ) { dialog, _ ->
+                dialog.dismiss()
+            }
+            .create()
         dialog.show()
     }
 
